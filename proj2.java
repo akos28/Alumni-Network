@@ -6,7 +6,7 @@ import java.awt.TextComponent.*;
 import javax.swing.JPasswordField.*;
 
 class Sign extends JFrame implements ActionListener{
-	JFrame fr4;
+	JFrame fr4,si;
 	static JPanel p4;
 	JButton  register;
 	JTextField ruid, runam;
@@ -61,6 +61,14 @@ class Sign extends JFrame implements ActionListener{
 		register.setBounds(200, 580, 100, 40);
 		register.addActionListener(this);
 		p4.add(register);
+		JFrame si = new JFrame();
+		si.setTitle("WELCOME TO THE LOGIN PAGE");
+		si.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		si.setVisible(true);
+		si.setSize(700,700);
+		si.add(p4);
+		si.setTitle("SIGN IN PAGE");
+		si.getContentPane().setBackground(Color.LIGHT_GRAY);
 	}
 	public static void infoBox(String infoMessage){
 		JOptionPane.showMessageDialog(null, infoMessage, "InfoBox: " ,JOptionPane.INFORMATION_MESSAGE);
@@ -85,16 +93,7 @@ class Sign extends JFrame implements ActionListener{
 		}
 	   
 	}
-	public static void main(String args[]){
-		Sign si = new Sign();
-		si.setTitle("WELCOME TO THE LOGIN PAGE");
-		si.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		si.setVisible(true);
-		si.setSize(700,700);
-		si.add(p4);
-		si.setTitle("SIGN IN PAGE");
-		si.getContentPane().setBackground(Color.LIGHT_GRAY);
-	} 
+	
 }
 
 class Home extends JFrame implements ActionListener{
