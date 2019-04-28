@@ -133,7 +133,7 @@ class Login extends JFrame implements ActionListener{
 		log();
 		}
 		else{
-		MyProj.infoBox("ERROR \n please check your password and user id again");
+		Login.infoBox("ERROR \n please check your password and user id again");
 		}
 	}
 	if(ae.getSource()==forgot){
@@ -148,11 +148,11 @@ class Login extends JFrame implements ActionListener{
 			Home hr = new Home();
 		}
 		else{
-			MyProj.infoBox("ERROR \n passwords do not match, please type again");
+			Login.infoBox("ERROR \n passwords do not match, please type again");
 		}	
 		}
 		else{
-		MyProj.infoBox("ERROR \n please fill all the boxes");
+		Login.infoBox("ERROR \n please fill all the boxes");
 		}
 	}
 	if(ae.getSource()==forgot){
@@ -168,6 +168,7 @@ class Login extends JFrame implements ActionListener{
 	pr.setVisible(true);
 	pr.setSize(500,500);
 	pr.add(p2);
+	pr.add(p1);
 	}
 	
 }
