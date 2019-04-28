@@ -6,7 +6,7 @@ import java.awt.TextComponent.*;
 import javax.swing.JPasswordField.*;
 
 class Login extends JFrame implements ActionListener{
-	JFrame fr,fr1,fr2,fr3;
+	JFrame fr,fr1,fr2,fr3,pr;
 	static JPanel p1,p2,p3,p4,p5;
 	JButton login, forgot, signin, submit, start;
 	JTextField uid, tf, nuid;
@@ -59,6 +59,13 @@ class Login extends JFrame implements ActionListener{
 		submit.addActionListener(this);
 		/*egu = new String("hello@gmail.com");
 		egp = new String("hello");*/
+		pr = new JFrame();
+		pr.setTitle("WELCOME TO THE LOGIN PAGE");
+		pr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		pr.setVisible(true);
+		pr.setSize(500,500);
+		pr.add(p2);
+		pr.add(p1);
 	}
 	public static void infoBox(String infoMessage){
 		JOptionPane.showMessageDialog(null, infoMessage, "InfoBox: " ,JOptionPane.INFORMATION_MESSAGE);
@@ -120,55 +127,44 @@ class Login extends JFrame implements ActionListener{
 		fr2.add(submit);
 	}
 	public void actionPerformed(ActionEvent ae){
-	if(ae.getSource()==login){
-		su = uid.getText();
-		sp = up.getText();
-		if(su.equals("hello@gmail.com") && sp.equals("hello")){
-		log();
+		if(ae.getSource()==login){
+			su = uid.getText();
+			sp = up.getText();
+			if(su.equals("hello@gmail.com") && sp.equals("hello")){
+				log();
+			}
+			else if(su.equals("saisreepokala") && sp.equals("Test1234")){
+				log();
+			}
+			else if(su.equals("ananyakosuru") && sp.equals("Check1234")){
+				log();
+			}
+			else{
+				Login.infoBox("ERROR \n please check your password and user id again");
+			}
 		}
-		else if(su.equals("saisreepokala") && sp.equals("Test1234")){
-		log();
+		if(ae.getSource()==forgot){
+			forg();
 		}
-		else if(su.equals("ananyakosuru") && sp.equals("Check1234")){
-		log();
+		if(ae.getSource()==submit){
+			s3 = nup.getText();
+			s4 = ncup.getText();
+			s5 = nuid.getText();
+			if(s3.length()!=0 && s4.length()!=0 && s5.length()!=0){
+				if(s3.equals(s4)){
+					Home hr = new Home();
+				}
+				else{
+					Login.infoBox("ERROR \n passwords do not match, please type again");
+				}	
+			}
+			else{
+				Login.infoBox("ERROR \n please fill all the boxes");
+			}
 		}
-		else{
-		Login.infoBox("ERROR \n please check your password and user id again");
-		}
-	}
-	if(ae.getSource()==forgot){
-		forg();
-	}
-	if(ae.getSource()==submit){
-		s3 = nup.getText();
-		s4 = ncup.getText();
-		s5 = nuid.getText();
-		if(s3.length()!=0 && s4.length()!=0 && s5.length()!=0){
-		if(s3.equals(s4)){
-			Home hr = new Home();
-		}
-		else{
-			Login.infoBox("ERROR \n passwords do not match, please type again");
+		if(ae.getSource()==forgot){
+			forg();
 		}	
-		}
-		else{
-		Login.infoBox("ERROR \n please fill all the boxes");
-		}
-	}
-	if(ae.getSource()==forgot){
-		forg();
-	}	
-	}
-	
-	public static void main(String args[]){
-	
-	Login pr = new Login();
-	pr.setTitle("WELCOME TO THE LOGIN PAGE");
-	pr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	pr.setVisible(true);
-	pr.setSize(500,500);
-	pr.add(p2);
-	pr.add(p1);
 	}
 	
 }
