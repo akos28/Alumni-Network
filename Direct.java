@@ -6,9 +6,11 @@ import java.awt.TextComponent.*;
 import javax.swing.JPasswordField.*;
 
 class Dire extends JFrame{
-	static JPanel p1,p2;
+	static JPanel p1;
+	JFrame frr;
 	Dire(){
 		p1 = new JPanel();
+		frr = new JFrame();
 		p1.setLayout(new BorderLayout());
 		JEditorPane web = new JEditorPane();
 		web.setContentType("text/html");
@@ -20,13 +22,13 @@ class Dire extends JFrame{
 		sp.setMinimumSize(new Dimension(60,60));
 		// p3.add(sp);
 		p1.add(sp,BorderLayout.CENTER);
+		frr.setTitle("DIRECTORY");
+		frr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frr.setVisible(true);
+		frr.setSize(900,900);
+		frr.add(p1);
 	}
 	public static void main(String args[]){
 		Dire dr = new Dire();
-		dr.setTitle("DIRECTORY");
-		dr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		dr.setVisible(true);
-		dr.setSize(900,900);
-		dr.add(p1);
 	}
 }
