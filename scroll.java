@@ -29,9 +29,13 @@ class Scrollp extends JFrame{
 		sp.setMinimumSize(new Dimension(60,60));
 		// p3.add(sp);
 		p1.add(sp,BorderLayout.CENTER);
-	}
-	public static void main(String args[]){
-		Scrollp ss = new Scrollp();
+		ss = new JFrame();
+		ss.setTitle("ABOUT US");
+		ss.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		ss.setVisible(true);
+		ss.setSize(900,900);
+		ss.add(p1);
+		ss = new JFrame();
 		ss.setTitle("ABOUT US");
 		ss.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		ss.setVisible(true);
