@@ -9,6 +9,7 @@ class Dire extends JFrame implements ActionListener{
 	static JPanel p1,p2;
 	JButton b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10;
 	JLabel l0,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10;
+	JFrame fm;
 	Dire()
 	{
 		p2 = new JPanel();
@@ -80,6 +81,12 @@ class Dire extends JFrame implements ActionListener{
 		p2.add(b9);
 		p2.add(l10);
 		p2.add(b10);
+		fm = new JFrame();
+		fm.setTitle("DIRECTORY");
+		fm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		fm.setVisible(true);
+		fm.setSize(900,900);
+		fm.add(p2);
 	}
 	public void actionPerformed(ActionEvent ae){
 		if(ae.getSource()==b0){
@@ -117,14 +124,7 @@ class Dire extends JFrame implements ActionListener{
 		}
 
 	}
-	public static void main(String args[]){
-		Dire dr = new Dire();
-		dr.setTitle("DIRECTORY");
-		dr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		dr.setVisible(true);
-		dr.setSize(900,900);
-		dr.add(p2);
-	}
+	
 }
 
 class Ragh extends JFrame implements ActionListener{
